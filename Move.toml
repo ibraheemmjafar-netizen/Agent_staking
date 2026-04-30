@@ -1,0 +1,24 @@
+[package]
+name = "agent_staking"
+version = "1.0.0"
+edition = "2024.beta"
+# Publisher: 0x47cee6fed8a44224350d0565a45dd97b320a9c3f54a8feb6036fb9b2d3a81a08
+# Three modules in this package:
+#   reward_router    -- shared reward distribution engine + admin top-ups + airdrops
+#   agent_staking    -- user-facing stake/unstake/claim with 30/90/180d tiers
+#   creator_pool     -- per-meme reward pools funded by creators (2% slice -> AGENT stakers)
+#
+# Build:    sui move build
+# Test:     sui move test
+# Publish:  sui client publish --gas-budget 500000000
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/mainnet" }
+
+[addresses]
+agent_staking = "0x0"
+
+[dev-dependencies]
+
+[dev-addresses]
+agent_staking = "0xCAFE"
